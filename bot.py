@@ -19,6 +19,7 @@ bot = commands.Bot(command_prefix=['`'])
 
 initial_extensions = [
     'cogs.debug',
+    'cogs.admin',
 ]
 
 @bot.event
