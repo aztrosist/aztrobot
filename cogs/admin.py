@@ -1,4 +1,5 @@
 from discord.ext import commands
+from .utils import checks
 import discord
 import subprocess
 import sys
@@ -10,6 +11,7 @@ class Admin:
     def __init__(self, bot):
         self.bot = bot
 
+    @checks.is_owner()
     @commands.command()
     async def load(self, *, module : str):
         """load some shit"""
@@ -20,6 +22,7 @@ class Admin:
         else:
             await self.bot.say('<:vpGreenTick:257437292820561920>')
 
+    @checks.is_owner()
     @commands.command()
     async def unload(self, *, module : str):
         """you are mom gay?"""
@@ -30,6 +33,7 @@ class Admin:
         else:
             await self.bot.say('<:vpGreenTick:257437292820561920>')
 
+    @checks.is_owner()
     @commands.command(name='reload')
     async def _reload(self, *, module : str):
         """reload a module"""
